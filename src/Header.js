@@ -1,7 +1,5 @@
-function Header(){
+export default function Header(){
     return(
-        <header>
-            <img src="/public/LittleLemon.png"/>
-        </header>
+        <header></header>
     );
-}
+};
