@@ -38,11 +38,11 @@ export default function Nav(){
                     className={click ? "menu" : "menuActive"}
                 >
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to='/AboutUs'>About</Link></li>
-                    <li><Link to='/Menu'>Menu</Link></li>
-                    <li><Link to='/Reservations'>Reservations</Link></li>
-                    <li><Link to='/Order'>Order Online</Link></li>
-                    <li><Link to='/Login'>Login</Link></li>
+                    <li><Link to="/AboutUs">About</Link></li>
+                    <li><Link to="/Menu">Menu</Link></li>
+                    <li><Link to="/Reservations">Reservations</Link></li>
+                    <li><Link to="/Order">Order Online</Link></li>
+                    <li><Link to="/Login">Login</Link></li>
                 </ul>
                 <div className="mobile" onClick={handleClick}>
                     <img src={click ? Close : Hamburger}></img>

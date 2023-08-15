@@ -4,7 +4,8 @@ import { CallToAction } from "../CallToAction";
 import Testimonials from "../Testimonials";
 import About from "../About";
 import Footer from "../../Footer";
-export default function Main(){
+import { Login } from "./Login";
+const Main = () =>{
     return(
         <main>
             <CallToAction/>
@@ -12,6 +13,8 @@ export default function Main(){
             <Testimonials/>
             <About/>
             <Footer/>
+            <Login/>
         </main>
     );
 }
+export default Main;
