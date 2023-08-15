@@ -1,0 +1,32 @@
+.Testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Testimonials-container{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1560px;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.Testimonials-title {
+    font-size: 40pt;
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 620px) {
+    .Testimonials-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}

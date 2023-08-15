@@ -1,0 +1,5 @@
+.background {
+    background-size: cover; /* Adjust how the image covers the element */
+    background-position: center; /* Position of the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
