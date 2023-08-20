@@ -1,24 +1,19 @@
 import { Link } from "react-router-dom";
 import "./Footer.css"
-import { Login } from "./components/pages/Login";
-import { Menu } from "./components/pages/Menu";
-import { Order } from "./components/pages/Order";
-import { AboutUs } from "./components/pages/AboutUs";
-import {Reservations} from "./components/pages/Reservations"
 export default function Footer(){
     return(
         <footer className="footer">
-            <div className="logo">
+            <div className="foot-logo">
                 <img src="LittleLemon.png"/>
             </div>
             <ul className="navigation">
                 <h4>Navigation</h4>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/menu">Menu</Link></li>
-                <li><Link to="/reservations">Reservations</Link></li>
-                <li><Link to="/order">Order Online</Link></li>
-                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/AboutUs">About</Link></li>
+                <li><Link to="/Menu">Menu</Link></li>
+                <li><Link to="/Reservations">Reservations</Link></li>
+                <li><Link to="/Order">Order Online</Link></li>
+                <li><Link to="/Login">Login</Link></li>
             </ul>
             <div className="contact">
                 <h4>Contact</h4>

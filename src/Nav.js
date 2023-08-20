@@ -29,10 +29,9 @@ export default function Nav(){
 
 
     return(
-        <>
            <nav className="navbar">
                 <div className="logo">
-                    <a href="/"><img src="LittleLemon.png" width="300" height="110"/></a>
+                    <Link to="/"><img src="LittleLemon.png" width="300" height="110"/></Link>
                 </div>
                 <ul
                     className={click ? "menu" : "menuActive"}
@@ -48,6 +47,5 @@ export default function Nav(){
                     <img src={click ? Close : Hamburger}></img>
                 </div>
             </nav>
-        </>
     );
 }

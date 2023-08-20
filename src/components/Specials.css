@@ -32,7 +32,7 @@
     white-space: nowrap;
     font-size: 40pt;
   }
-  @media screen and (max-width:1142px){
+  @media screen and (max-width:822px){
     .specials__title {
       display: flex;
       justify-content: center;

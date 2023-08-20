@@ -1,5 +1,23 @@
-.background {
-    background-size: cover; /* Adjust how the image covers the element */
-    background-position: center; /* Position of the background image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-}
+.background-container {
+    background-image: url("../images/location.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh; /* Adjust as needed */
+    opacity: .8;
+  }
+
+  .center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Take up full height of parent */
+    text-align: center;
+    color: Red;
+  }
+
+  .center-text h1 {
+    font-size: 48pt;
+    font-weight: bold;
+  }

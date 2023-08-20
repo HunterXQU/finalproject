@@ -1,6 +1,17 @@
-import { StandardPage } from "./StandardPage";
-export const Order = () => {
+import "./StandardPage.css";
+import Nav from "../../Nav";
+import Footer from "../../Footer";
+function Order () {
     return(
-        <StandardPage>Order</StandardPage>
+        <>
+        <Nav/>
+        <div className="background-container">
+            <div className="center-text">
+                <h1>Order</h1>
+            </div>
+        </div>
+        <Footer/>
+        </>
     )
-}
+};
+export default Order;

@@ -35,16 +35,7 @@
   .menu li a:hover{
     color:slategrey;
   }
-  .menu li a:hover::after{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: slategrey;
-    position: absolute;
-    bottom: -4px;
-    left: 30px;
 
-  }
 
   .mobile {
     display: none
@@ -110,7 +101,7 @@
         height: 100vh;
         padding: 0;
         margin: 0;
-        background:black;
+        background-color: rgb(24, 30, 39);
         padding: 40px 0 0 10px;
         box-shadow: 10px;
         transition: 0.3s ease-in-out;
