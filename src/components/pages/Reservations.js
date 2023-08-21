@@ -8,7 +8,7 @@ import Footer from "../../Footer";
 
 const updateTimes = (availableTimes, date) => {
     const response = fetchAPI(new Date(date));
-    return (response.length !== 0) ? response : availableTimes;
+    return response;
   }
 const initializeTimes = initialAvailableTimes =>
      [...initialAvailableTimes, ...fetchAPI(new Date())];
