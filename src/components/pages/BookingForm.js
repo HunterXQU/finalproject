@@ -1,30 +1,37 @@
 import React, {useState} from "react";
 import "./BookingForm.css";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-export default function BookingForm (props) {
+export default function BookingForm ({submitData, availableTimes, updateTimes} ) {
+    const navigate = useNavigate();
+    const occasions = ["None", "Birthday", "Anniversary", "Engagement", "Other"]
     const [date, setDate] = useState("");
     const [people, setPeople] = useState("");
     const [occasion, setOccasion] = useState("");
-    const [time, setTime] = useState(props.availableTimes[0]);
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const isDateValid = () => date !== '';
-    const isNumberOfGuestsValid = () => people !== '';
-    
-  
-    const areAllFieldsValid = () => {
-      isDateValid() && isNumberOfGuestsValid() ;
+    const [time, setTime] = useState(availableTimes[0]);
+
+
+    function areAllFieldsValid () {
+        return people !== '' && people >= 1 && people <= 10
+        && date != ""
+        && occasion != "";
     }
+
     function handleFormSubmit(e) {
         e.preventDefault();
-        setFormSubmitted(props.submitData({date, time, people, occasion}));
+        submitData({date, people, time, occasion});
+        navigate("/Confirmation")
     }
     function handleTimeChange(e){
         setTime(e.target.value)
     }
     function handleDateChange(e) {
         setDate(e.target.value);
-        props.updateTimes(e.target.value);
+        updateTimes(e.target.value);
       }
+    function handlePeopleChange(e){
+        setPeople(e.target.value)
+    }
 
     return (
         <form className="registration-form" onSubmit={handleFormSubmit}>
@@ -49,8 +56,8 @@ export default function BookingForm (props) {
                 required={true}
                 onChange={handleTimeChange}
                 >
-                    {props.availableTimes.map((times) =>
-                    <option>
+                    {availableTimes.map((times) =>
+                    <option data-testid="times" key={times}>
                         {times}
                     </option>
                     )}
@@ -66,7 +73,7 @@ export default function BookingForm (props) {
                 min={1}
                 max={10}
                 placeholder="1-10"
-                onChange={(e) => setPeople(e.target.value)}
+                onChange={handlePeopleChange}
                 ></input>
             </div>
 
@@ -78,26 +85,18 @@ export default function BookingForm (props) {
                 required={true}
                 onChange={(e) => setOccasion(e.target.value)}
                 >
-                    <option>None</option>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                    <option>Engagement</option>
-                    <option>Other</option>
+                    {occasions.map((occasions) =>
+                    <option data-testid="occasions" key={occasions}>
+                        {occasions}
+                    </option>
+                    )}
                 </select>
             </div>
 
             <div>
-            {formSubmitted ? (
-                    <Link to="/Confirmation" className=''>
-                        <button className="form-submit" type="submit" disabled={!areAllFieldsValid}>
-                            Book Table
-                        </button>
-                    </Link>
-                ) : (
-                    <button className="form-submit" type="submit" disabled={!areAllFieldsValid}>
-                            Book Table
-                        </button>
-                )}
+                <button className="form-submit" type="submit" disabled={!areAllFieldsValid}>
+                        Book Table
+                </button>
             </div>
 
         </form>
